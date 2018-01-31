@@ -4,10 +4,14 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, Button, View} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import { NativeRouter, Link } from 'react-router-native';
 import { BackButton, Navigation, Card } from 'react-router-navigation';
+import { Button, Icon } from 'native-base';
+
 import ImageHeader from './views/ImageHeader';
+import FirstForm from './views/FirstForm';
+import DetailView from './views/DetailView';
 
 export default class App extends Component<{}> {
   render() {
@@ -26,31 +30,56 @@ export default class App extends Component<{}> {
             )} 
             render={() => (
                 <View style={styles.container}>
-                    <Text>Proof of concept, of the Bizagi forms in react native.</Text>
-                    <Link to="/FirstForm/1">
-                        <Text style={styles.navitem}> Click</Text>
-                    </Link>
+                    <Text style={{paddingBottom: 15}}>Proof of concept, of the Bizagi forms in react native.</Text>
+                    
+                    <Button block style={{ backgroundColor: '#295d7b' }}>
+                        <Link to='/FirstForm' underlayColor='transparent' style={{flex: 1}} >
+                            <Text style={styles.navitem}>Work on it!!</Text>
+                        </Link>                    
+                        </Button>
                 </View>
             )}
-
             />
-            <Card path="/FirstForm/:id" 
+            
+
+            <Card path="/FirstForm" 
              renderNavBar={({history, match}) => (
                 <ImageHeader>
-                    <View style={{flex: 1}}>
-                        <Button onPress={() => history.goBack()} title="back" />
-                        
-                        <Text style={{padding: 15, color: '#FFF', fontSize: 16, fontWeight: '600'}}>Caso {match.params.id}</Text>
+                    <View style={{flex: 1, flexDirection: 'row'}}>
+                        <Button transparent onPress={() => history.goBack()} title='back' >
+                            <Icon  style={{fontSize: 22, color: '#FFF'}} name='arrow-back' />
+                        </Button>
+                        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', paddingTop: 5, paddingBottom: 5 }}>
+                            <Text style={styles.headerTitle}>Request office supplies</Text>
+                            <Text style={styles.headerSubTitle}>CO-6122 Office supplies request</Text>
+                        </View>
+                        <Button transparent title='next'>
+                            <Icon style={{fontSize: 22, color: '#FFF'}} name="more" />
+                        </Button>
                     </View>
                 </ImageHeader>
             )}
-            render={({match}) => (
-                <View style={styles.container}>
-                    <Link to={`/FirstForm/${Math.random()}`}>
-                    <Text style={styles.navitem}> Click again {match.params.id}</Text>
-                    </Link> 
-                </View>
+            component={FirstForm}
+            />
+
+            <Card path="/DetailView/:id" 
+             renderNavBar={({history, match}) => (
+                <ImageHeader>
+                    <View style={{flex: 1, flexDirection: 'row'}}>
+                        <Button transparent onPress={() => history.goBack()} title='back' >
+                            <Icon  style={{fontSize: 22, color: '#FFF'}} name='arrow-back' />
+                        </Button>
+                        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', paddingTop: 5, paddingBottom: 5 }}>
+                            <Text style={styles.headerTitle}>Request office supplies</Text>
+                            <Text style={styles.headerSubTitle}>CO-6122 Office supplies request</Text>
+                        </View>
+                        <Button transparent title='next'>
+                            <Icon style={{fontSize: 22, color: '#FFF'}} name="more" />
+                        </Button>
+                    </View>
+                </ImageHeader>
             )}
+            component={DetailView}
             />
 
         </Navigation>
@@ -66,7 +95,18 @@ const styles = StyleSheet.create({
         padding: 10
     },
     navitem:{
-        alignItems: 'center',
-        padding: 10
+        textAlign: 'center',
+        padding: 10,
+        color: '#FFF'
+    },
+    headerTitle: {
+        color: '#FFF',
+        fontSize: 16,
+        fontWeight: '200'
+    },
+    headerSubTitle: {
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: '100'
     }
 });

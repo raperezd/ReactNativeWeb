@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 /* import { Button, Card, CardItem, Body, List, ListItem } from 'native-base';
 
