@@ -1,9 +1,0 @@
-import 'babel-polyfill';
-import React from 'react';
-import ReactDOM from "react-dom";
-
-console.log("prboando")
-ReactDOM.render(
-  <h1>Hello!</h1>,
-  document.getElementById('root')
-);
