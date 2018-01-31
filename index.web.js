@@ -1,4 +1,6 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-AppRegistry.registerComponent('ReactNativeWeb', () => App);
+import App from './app/App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
