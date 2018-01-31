@@ -1,14 +1,8 @@
-const stylesheetUrl = require("extract-text-webpack-plugin");
-
-// Create multiple instances of stlyes depending if the extension is .css or .scsss
-const extractCSS = new stylesheetUrl('[name]-one.css');
-const extractSASS = new stylesheetUrl('[name]-two.css');
-
 //var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    //context: path.resolve(__dirname, "./web/src"),
+    context: path.resolve(__dirname, "./"),
     devServer: {
         contentBase: path.join(__dirname, "/web/dist"),
         compress: true,
@@ -24,19 +18,34 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: stylesheetUrl.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
+                use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.scss$/,
-                use: stylesheetUrl.extract({
-                    fallback: "style-loader",
-                    use: ["css-loader", "sass-loader"]
-                })
+                test: /\.scss/,
+                loader: 'style-loader!css-loader!sass-loader'
             },
-            { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+            { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                loaders: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        query: {
+                            progressive: true,
+                            optimizationLevel: 7,
+                            interlaced: false,
+                            pngquant: {
+                                quality: 50,
+                                speed: 4
+                            },
+                            mozjpeg: {
+                                quality: 50
+                            }
+                        }
+                    }
+                ]
+            }
         ],
         loaders: [
             {
@@ -51,7 +60,5 @@ module.exports = {
         ]
     },
     plugins: [
-        new stylesheetUrl("app.css")
-        //,new HtmlWebpackPlugin()
     ]
 };
