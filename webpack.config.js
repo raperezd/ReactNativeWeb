@@ -4,7 +4,7 @@ const stylesheetUrl = require("extract-text-webpack-plugin");
 const extractCSS = new stylesheetUrl('[name]-one.css');
 const extractSASS = new stylesheetUrl('[name]-two.css');
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+//var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
@@ -15,9 +15,9 @@ module.exports = {
         port: 3000,
         hot:true
     },
-    entry: './web/src/index.web.js',
+    entry: './index.web.js',
     output: {
-        filename: './web/dist/bundle.js'
+        filename: './web/dist/js/bundle.js'
     },
     module: {
         rules: [
