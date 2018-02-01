@@ -26,22 +26,12 @@ module.exports = {
             },
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
             {
-                test: /\.(gif|png|jpe?g|svg)$/i,
-                loaders: [
-                    'file-loader',
+                test: /\.(png|jpg|gif)$/,
+                use: [
                     {
-                        loader: 'image-webpack-loader',
-                        query: {
-                            progressive: true,
-                            optimizationLevel: 7,
-                            interlaced: false,
-                            pngquant: {
-                                quality: 50,
-                                speed: 4
-                            },
-                            mozjpeg: {
-                                quality: 50
-                            }
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: './web/dist/images/'
                         }
                     }
                 ]

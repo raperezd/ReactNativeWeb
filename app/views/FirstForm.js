@@ -9,7 +9,6 @@ import ExtendedText from '../components/extendedText/ExtendedText';
 
 class FirstForm extends React.Component {
     render() {
-        const match = this.props.match;
         return (
            <Form> 
                 <Collapsible expanded={true} bgColor='#fff' title='Office supplies request' type='title'>
