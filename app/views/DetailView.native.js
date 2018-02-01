@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 
-import {
-    StyleSheet,
-    Text,
-    ScrollView, 
-    View
-} from 'react-native';
-
-import { Link } from 'react-router-native';
+import Collapsible from '../components/collapsible/Collapsible';
+import Form from '../components/form/Form';
+import Span from '../components/span/Span';
+import Grid from '../components/grid/Grid';
+import Control from '../components/control/Control';
+import ExtendedText from '../components/extendedText/ExtendedText';
 
 class FirstForm extends React.Component {
     render() {
         const match = this.props.match;
         return (
-            <View>
-            <Link to={`/FirstForm/${Math.random()}`}>
-                <Text>Click again {match.params.id}</Text>
-            </Link>
-            </View>
+           <Form> 
+                <Collapsible expanded={true} bgColor='#fff' title='Office supplies request' type='title'>
+                    <Grid onItemSelected={(item) => navigate('DetailView', { ...item })} />
+                    <Control label='If you are requesting an asset replacement, please write down the reason' />
+                    <Control label={<Span>Replacement reason</Span>} fontSize={12} bold={true}>
+                        <ExtendedText></ExtendedText>
+                    </Control>
+                </Collapsible>
+            </Form>
         );
     }
 }

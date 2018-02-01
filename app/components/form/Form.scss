@@ -1,0 +1,18 @@
+
+.m-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+
+    .m-form-container{
+        flex: 1;
+        height: 100%;
+        overflow: scroll;
+    }
+
+    .m-form-button-container{
+        flex: 1;
+    }
+}
