@@ -1,12 +1,25 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
-body {
+body, #root {
   font: 100% $font-stack;
   color: $primary-color;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 } 
+
+.m-full-fill{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
 
 .m-header-layout {
   display: flex;

@@ -24,6 +24,10 @@ module.exports = {
                 test: /\.scss/,
                 loader: 'style-loader!css-loader!sass-loader'
             },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'url-loader?limit=100000'
+            },
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,

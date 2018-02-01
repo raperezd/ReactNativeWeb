@@ -9,9 +9,8 @@ import ExtendedText from '../components/extendedText/ExtendedText';
 
 class FirstForm extends React.Component {
     render() {
-        const match = this.props.match;
         return (
-           <Form> 
+            <Form>
                 <Collapsible expanded={true} bgColor='#fff' title='Office supplies request' type='title'>
                     <Grid onItemSelected={(item) => navigate('DetailView', { ...item })} />
                     <Control label='If you are requesting an asset replacement, please write down the reason' />
@@ -19,7 +18,7 @@ class FirstForm extends React.Component {
                         <ExtendedText></ExtendedText>
                     </Control>
                 </Collapsible>
-           </Form>
+            </Form>
         );
     }
 }
