@@ -10,14 +10,9 @@
     "serve": "webpack-dev-server"
   },
   "dependencies": {
-<<<<<<< HEAD
     "framework7": "^1.5.3",
     "framework7-icons": "^0.8.9",
     "framework7-react": "^0.9.1",
-=======
-    "bootstrap": "^4.0.0",
-    "rc-swipeout": "^2.0.4",
->>>>>>> 42c3f6c8967bdc7be32afbad45550e5f47c09c97
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-native": "0.52.2",
