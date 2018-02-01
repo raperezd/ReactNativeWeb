@@ -6,20 +6,28 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "build": "webpack --watch",
-    "buildProd": "webpack -p",
+    "buildProd": "webpack -p --watch",
     "serve": "webpack-dev-server"
   },
   "dependencies": {
+<<<<<<< HEAD
     "framework7": "^1.5.3",
     "framework7-icons": "^0.8.9",
     "framework7-react": "^0.9.1",
+=======
+    "bootstrap": "^4.0.0",
+    "rc-swipeout": "^2.0.4",
+>>>>>>> 42c3f6c8967bdc7be32afbad45550e5f47c09c97
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-native": "0.52.2",
+    "react-native-swipeable": "^0.6.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-native": "^4.2.0",
-    "react-router-navigation": "^1.0.0-rc.3"
+    "react-router-navigation": "^1.0.0-rc.3",
+    "react-swipeout": "^1.1.1",
+    "reactstrap": "^5.0.0-beta"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
