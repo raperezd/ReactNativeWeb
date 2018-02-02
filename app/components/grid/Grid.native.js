@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+
 import { StyleSheet, ListView, TouchableHighlight } from 'react-native';
-import { Button, List } from 'native-base';
-/* import Icon from 'react-native-vector-icons/Feather';
-import { BizagiGridItem } from './BizagiGridItem'; */
-import datas from '../../data/gridData';
+import { Button, List, Icon } from 'native-base';
+import { GridItem } from './GridItem'; 
+import SmartGrid from './SmartGrid'; 
 import Collapsible from '../collapsible/Collapsible';
-//import BizagiCard from './BizagiCard';
+import Card from '../card/Card';
 
 const styles = StyleSheet.create({
     deleteButton: {
@@ -16,44 +16,37 @@ const styles = StyleSheet.create({
         elevation: 0,
     },
 });
-
-export default class Grid extends Component {
-    constructor(props) {
-        super(props);
-        this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-        this.state = {
-            // basic: true,
-            listViewData: datas,
-        };
-    }
-
-    static propTypes = {
-        onItemSelected: PropTypes.func
-    }
-
-    static defaultProps = {
-        onItemSelected: (item) => { }
-    }
-
-    addNewItem(){
-        let randNumber =  Math.floor(Math.random() * this.state.listViewData.length);
-        const newData = [...this.state.listViewData];
-
-        newData.unshift(this.state.listViewData[randNumber]);
-        this.setState({ listViewData: newData });
-    }
-
-    deleteRow(secId, rowId, rowMap) {
-        rowMap[`${secId}${rowId}`].props.closeRow();
-        const newData = [...this.state.listViewData];
-        newData.splice(rowId, 1);
-        this.setState({ listViewData: newData });
-    }
+  
+class Grid extends Component {
     render() {
-        //const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+        const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         return (
-            <Collapsible expanded={true} bgColor="#DEDEDE" title="Supplies to request" type="subTitle">
+            <Collapsible expanded={true} bgColor='#DEDEDE' title='Supplies to request' type='subTitle'>
+                <TouchableHighlight onPress={_ => this.props.addNewItem()} >
+                    <Card label="Add suplies to request." />
+                </TouchableHighlight>
+                <List
+                    style={{ backgroundColor: 'transparent', padding: 12, zIndex: 0 }}
+                    swipeRowStyle={{ backgroundColor: 'transparent' }}
+                    dataSource={ds.cloneWithRows(this.props.listViewData)}
+                    renderRow={data => (<GridItem {...data} />)}
+
+                    renderRightHiddenRow={(data, secId, rowId, rowMap) =>
+                        (
+                            <Button style={styles.deleteButton} full danger
+                                onPress={_ => { 
+                                    rowMap[`${secId}${rowId}`].props.closeRow();
+                                    this.props.deleteRow(rowMap, rowId);
+                                    }} >
+                                 <Icon active name="trash" />
+                            </Button>
+                        )
+                    }
+                    rightOpenValue={-50}
+                />
             </Collapsible>
         );
     }
 }
+
+export default SmartGrid(Grid);
