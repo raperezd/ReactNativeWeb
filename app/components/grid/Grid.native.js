@@ -29,7 +29,9 @@ class Grid extends Component {
                     style={{ backgroundColor: 'transparent', padding: 12, zIndex: 0 }}
                     swipeRowStyle={{ backgroundColor: 'transparent' }}
                     dataSource={ds.cloneWithRows(this.props.listViewData)}
-                    renderRow={data => (<GridItem {...data} />)}
+                    renderRow={data => ( 
+                        <GridItem {...data} />  
+                    )}
 
                     renderRightHiddenRow={(data, secId, rowId, rowMap) =>
                         (

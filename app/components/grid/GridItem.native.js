@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import { ListItem, Content, Grid, Col, Row } from 'native-base';
+import { Link } from 'react-router-native';
 
 const styles = StyleSheet.create({
     listItem: {
@@ -45,8 +46,12 @@ const styles = StyleSheet.create({
 
 
 const SimpleGridItem = props => (
+    
     <Content style={props.style}>
         <Grid>
+            <Link to={`/DetailView/'${props.id}`}>
+                <Text>Press it</Text>
+            </Link>
             <Col style={{ width: 35, marginRight: 10 }}>
                 <Image style={{ width: 35, height: 35 }} source={props.images[0]}></Image>
             </Col>
@@ -71,7 +76,7 @@ const SimpleGridItem = props => (
 )
 
 const GridItem = props => (
-    <ListItem style={styles.listItem} onPress={props.onPress}>
+    <ListItem style={styles.listItem} >  
         <SimpleGridItem {...props} /> 
     </ListItem>
 )
