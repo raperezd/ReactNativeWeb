@@ -1,11 +1,11 @@
 import React from 'react';
 import { AccordionItem, AccordionToggle, AccordionContent } from 'framework7-react';
-import styles from './Collapsible.scss';
+import './Collapsible.scss';
 
 export default class Collapsible extends React.Component {
     render() {
         return (
-            <AccordionItem expanded={true}>
+            <AccordionItem expanded={this.props.expanded}>
                 <AccordionToggle>
                     <span className='m-accordion-title'>{this.props.title}</span><i className="m-icon f7-icons">chevron_down</i></AccordionToggle>
                 <AccordionContent>

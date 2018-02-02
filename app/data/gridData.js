@@ -1,4 +1,4 @@
-export default data = [
+const data = [
     {
         id: 1,
         images: [
@@ -51,3 +51,5 @@ export default data = [
         deliverTime: 'Deliver in 13 days'
     },
 ];
+
+export default data;

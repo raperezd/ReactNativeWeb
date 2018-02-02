@@ -25,19 +25,26 @@ export default class App extends React.Component {
                         <Page name='firstform'>
                             <Navbar>
                                 <NavLeft backLink="Back" sliding></NavLeft>
-                                    <NavCenter>Request supplies</NavCenter>
+                                <NavCenter>Request supplies</NavCenter>
                                 <NavRight>
                                     <Link>Next</Link>
                                 </NavRight>
                             </Navbar>
                             <FirstForm />
                         </Page>
-                    )                    
+                    )
                 },
                 {
-                    path: '/DetailView/',
-                    component:  () => (
-                        <Page name="viewdetail">Hola</Page>
+                    path: '/DetailView/:id',
+                    component: () => (
+                        <Page name="viewdetail">
+                            <Navbar>
+                                <NavLeft backLink="Back" sliding></NavLeft>
+                                    <NavCenter>Detail View</NavCenter>
+                                <NavRight>
+                                </NavRight>
+                            </Navbar>
+                        </Page>
                     )
                 }
             ]}>
