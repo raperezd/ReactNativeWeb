@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Container, Header, Content, Card, CardItem, Body } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Body, Icon } from 'native-base';
 
 import {
     StyleSheet,
@@ -23,15 +23,13 @@ const styles = StyleSheet.create({
     icon: {
         fontSize: 25,
         color: "#2C5D79",
-        fontWeight: "normal",
-        marginTop:5,
+        fontWeight: "normal"
     },
     desc: {
         flex: 1,
         textAlign: 'center',
         color: "gray",
-        fontWeight: "normal",
-        marginBottom:5,
+        fontWeight: "normal"
     }
 });
 
@@ -45,6 +43,7 @@ class BizagiCard extends React.Component {
         return (
             <View style={styles.card}>
                 <Text style={styles.desc}>{this.props.label}</Text>
+                <Icon style={styles.icon} name="add-circle" />
             </View>
         );
     }

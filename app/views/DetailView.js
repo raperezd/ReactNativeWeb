@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Control from '../components/control/Control';
 import Carousel from '../components/carousel/Carousel';
-import BizagiCounter from '../components/counter/BizagiCounter';
+import Counter from '../components/counter/Counter';
 import ExtendedText from '../components/extendedText/ExtendedText';
 import { View, Page, Toolbar, Link, Tabs, Tab } from 'framework7-react';
 import data from '../data/gridData';
@@ -37,7 +37,7 @@ class DetailView extends React.Component {
                 <hr size="1" />
                 <Carousel images={this.data.images} />
                 <div className="quantitySection">
-                    <BizagiCounter />
+                    <Counter />
                 </div>
 
                 <Toolbar tabbar className='m-toolbar'>
