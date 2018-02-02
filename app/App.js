@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FirstForm from './views/FirstForm';
+import DetailView from './views/DetailView';
 import ImageHeader from './views/ImageHeader';
 
 
@@ -44,6 +45,7 @@ export default class App extends React.Component {
                                 <NavRight>
                                 </NavRight>
                             </Navbar>
+                            <DetailView/>
                         </Page>
                     )
                 }
