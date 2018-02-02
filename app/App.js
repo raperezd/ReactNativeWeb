@@ -10,7 +10,6 @@ import {
     List, ListItem, Views, NavLeft, Link, NavCenter, NavRight, GridRow, GridCol, Button, Popup,
     LoginScreen, LoginScreenTitle, ListButton, ListLabel, FormLabel, FormInput, Toolbar
 } from 'framework7-react';
-
 import styles from './App.scss';
 
 let currentRoute;
