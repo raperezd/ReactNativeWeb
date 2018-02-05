@@ -40,10 +40,10 @@ class DetailView extends React.Component {
                     <BizagiCounter />
                 </div>
 
-                <Toolbar tabbar className='m-toolbar'>
-                    <Link tabLink="#tab1">Overview</Link>
-                    <Link tabLink="#tab2">Comments</Link>
-                    <Link tabLink="#tab3">Reviews</Link>
+                <Toolbar tabbar className='m-toolbar bz-tabs--header'>
+                    <Link className="bz-tabs--link" tabLink="#tab1">Overview</Link>
+                    <Link className="bz-tabs--link" tabLink="#tab2">Comments</Link>
+                    <Link className="bz-tabs--link" tabLink="#tab3">Reviews</Link>
                 </Toolbar>
                 <Tabs tabbar swipeable>
                     <Tab id="tab1" active>
@@ -80,7 +80,7 @@ class DetailView extends React.Component {
 
                     </Tab>
                     <Tab id="tab3">
-                        <div>
+                        <div className="overrideContent">
                             <ul>
                                 <li>QC35 wireless headphones II</li>
                                 <li>USB charging cable</li>

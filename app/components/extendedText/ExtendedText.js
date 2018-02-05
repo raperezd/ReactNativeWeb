@@ -8,7 +8,7 @@ class ExtendedText extends React.Component {
 
     render() {
         return (
-            <input value={this.props.value} />
+            <input className="control control-extentedText" placeholder="abc" value={this.props.value} />
         );
     }
 }

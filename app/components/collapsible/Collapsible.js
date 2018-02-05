@@ -8,7 +8,7 @@ export default class Collapsible extends React.Component {
             <AccordionItem expanded={this.props.expanded}>
                 <AccordionToggle>
                     <span className='m-accordion-title'>{this.props.title}</span><i className="m-icon f7-icons">chevron_down</i></AccordionToggle>
-                <AccordionContent>
+                <AccordionContent className="bz-accordion--content">
                     {this.props.children}
                 </AccordionContent>
             </AccordionItem> 

@@ -54,12 +54,12 @@ export default class App extends React.Component {
                     <View main>
                         <Pages navbarFixed>
                             <Page name='home'>
-                                <Navbar>
-                                    <NavCenter>POC React native web</NavCenter>
+                                <Navbar className="header header-poc">
+                                    <label>POC React native web</label>
                                 </Navbar>
 
-                                <p>Page content goes here</p>
-                                <Link href="/FirstForm/">Work on it!</Link>
+                                <p>Proof of concept, of the Bizagi forms usinng React native.</p>
+                                <Link className="btn bz-btn--primay" href="/FirstForm/">Work on it!</Link>
                             </Page>
                         </Pages>
                     </View>

@@ -18,7 +18,7 @@ export default class Carousel extends React.Component {
         return (
             <Swiper params={{speed:500, slidesPerView: 3, spaceBetween: 20}}>
                 {this.props.images.map(image => (
-                    <SwiperSlide>  <div className="contentImg"><img width="200" src={image.uri} alt="" /></div></SwiperSlide>
+                    <SwiperSlide>  <div className="contentImg"><img width="100" src={image.uri} alt="" /></div></SwiperSlide>
                 ))}
             </Swiper>
         )
