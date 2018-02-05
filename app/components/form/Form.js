@@ -10,7 +10,7 @@ class Form extends React.Component {
                     {this.props.children}
                 </div>
                 <Toolbar bottom className='m-form-button-container'>
-                    <span>Request supplies</span>
+                    <span className="m-form-button-container__span">Request supplies</span>
                 </Toolbar>
             </div>
 
