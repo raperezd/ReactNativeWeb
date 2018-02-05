@@ -26,4 +26,4 @@ class BizagiCounter extends React.Component {
     }
 }
 
-export default BizagiCounter;
+export default Counter;
