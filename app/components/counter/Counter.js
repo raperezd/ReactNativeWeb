@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './BizagiCounter.scss';
-class BizagiCounter extends React.Component {
+import './Counter.scss';
+class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = { value: this.props.value || 0 };

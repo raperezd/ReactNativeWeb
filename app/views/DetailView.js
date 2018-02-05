@@ -11,7 +11,7 @@ class DetailView extends React.Component {
 
     constructor(props) {
         super(props);
-        let {route} = props; 
+        let { route } = props;
         this.data = data.find(el => el.id.toString() == route.params.id);
     }
     openTab(evt, cityName) {
@@ -34,19 +34,19 @@ class DetailView extends React.Component {
                         <span className="time">{this.data.deliverTime}</span>
                     </li>
                 </ul>
-                <hr size="1" />
                 <Carousel images={this.data.images} />
+                <hr size="1" />
                 <div className="quantitySection">
                     <Counter />
                 </div>
-
+                <hr size="1" />
                 <Toolbar tabbar className='m-toolbar bz-tabs--header'>
                     <Link className="bz-tabs--link" tabLink="#tab1">Overview</Link>
                     <Link className="bz-tabs--link" tabLink="#tab2">Comments</Link>
                     <Link className="bz-tabs--link" tabLink="#tab3">Reviews</Link>
                 </Toolbar>
                 <Tabs tabbar swipeable>
-                    <Tab id="tab1" active>
+                    <Tab id="tab1" className="active" active>
                         <div className="overrideContent">
                             <h3>Dimensions / weight without the cable</h3>
                             <span><b>Headphones:</b>7.1" H x 6.7" W x 3.2" D (8.3 oz) </span>
